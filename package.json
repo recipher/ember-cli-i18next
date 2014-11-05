@@ -1,0 +1,26 @@
+{
+  "name": "ember-cli-i18next",
+  "version": "0.0.1",
+  "description": "Wrap i18next for ember-cli apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/recipher/ember-cli-i18next.git"
+  },
+  "keywords": [
+    "ember-addon"
+  ],
+  "author": "Johnny Hall",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/recipher/ember-cli-i18next/issues"
+  },
+  "homepage": "https://github.com/recipher/ember-cli-i18next",
+  "dependencies": {
+    "bower": "^1.3.9"
+  }
+}

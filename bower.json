@@ -1,0 +1,6 @@
+{
+  "name": "ember-cli-i18next",
+  "dependencies": {
+    "i18next": "~1.7.3"
+  }
+}
