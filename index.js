@@ -25,7 +25,7 @@ EmberCLIi18next.prototype.treeFor = function(name) {
 
 EmberCLIi18next.prototype.included = function(app) {
   this.app = app;
-  this.app.import(app.bowerDirectory + 'i18next/i18next.js');
+  this.app.import(app.bowerDirectory + '/i18next/i18next.js');
 };
 
 module.exports = EmberCLIi18next;
