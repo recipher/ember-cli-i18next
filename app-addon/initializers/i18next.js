@@ -6,7 +6,9 @@ import helper from '../helpers/i18next';
 export default {
   name: 'i18next'
 
-, initialize: function(container) {
+, initialize: function(container, app) {
+    app.deferReadiness();
+
     var locale = localStorage.locale || 'en';
 
     i18n.init({
@@ -28,6 +30,8 @@ export default {
       Ember.A([ 'controller', 'view', 'route' ]).forEach(function(component) {
         container.injection(component, 'i18n', 'app:i18n');
       });
+
+      app.advanceReadiness();
     });
 
     i18n.addPostProcessor('capitalize', function(value) {
