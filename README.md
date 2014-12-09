@@ -40,7 +40,10 @@ export default Ember.Controller.extend({
   actions: {
     test: function() {
       var i18n = this.get('i18n');
-      var test = i18n.t('my.key');
+      var test = i18n.get('my.key');
+
+      // Or
+      var alternative = i18n.t('my.key');
     }
   }
 });

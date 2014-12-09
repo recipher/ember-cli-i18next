@@ -25,7 +25,18 @@ export default {
     }
 
     , function() {
-      container.register('app:i18n', Ember.Object.create({ locale: locale }), { instantiate: false });
+      var component = Ember.Object.create({ 
+        locale: locale
+      , unknownProperty: function(key) {
+          return this.get('i18n').t(key);
+        }
+      , t: function(key) {
+          return this.get('i18n').t(key);
+        }
+      , i18n: i18n
+      });
+
+      container.register('app:i18n', component, { instantiate: false });
       
       Ember.A([ 'controller', 'view', 'route' ]).forEach(function(component) {
         container.injection(component, 'i18n', 'app:i18n');
