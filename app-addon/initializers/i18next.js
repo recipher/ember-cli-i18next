@@ -2,6 +2,7 @@
 
 import Ember from 'ember';
 import helper from '../helpers/i18next';
+import config from '../config/environment';
 
 export default {
   name: 'i18next'
@@ -9,7 +10,8 @@ export default {
 , initialize: function(container, app) {
     app.deferReadiness();
 
-    var locale = localStorage.locale || 'en';
+    var locale = localStorage.locale || 'en'
+      , baseUrl = config.baseURL || '/';
 
     i18n.init({
       ns: { 
@@ -21,7 +23,7 @@ export default {
     , lng: locale
     , fallbackLng: 'en'
     , getAsync: true
-    , resGetPath: '/locales/__lng__/__ns__.json'
+    , resGetPath: baseUrl + 'locales/__lng__/__ns__.json'
     }
 
     , function() {
