@@ -2,6 +2,6 @@
 
 import Ember from 'ember';
 
-export default function(key, post) {
-  return new Ember.Handlebars.SafeString(i18n.t(key, post ? { postProcess: post } : {}));
+export default function(key, options) {
+  return new Ember.Handlebars.SafeString(i18n.t(key, options.hash || {}));
 }
